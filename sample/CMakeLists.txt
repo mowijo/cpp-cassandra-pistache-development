@@ -8,4 +8,4 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_executable ( pct main.cpp )
 
-target_link_libraries( pct pistache )
+target_link_libraries( pct pistache cassandra )

@@ -1,4 +1,4 @@
-FROM mowijo/cpp-cassandra-development:v1
+FROM mowijo/cpp-cassandra-development:v2
 
 RUN ( \
   cd /tmp && \
@@ -10,9 +10,10 @@ RUN ( \
   ninja && \
   cp -rf src/libpistache.* /usr/local/lib && \
   cp -rf /tmp/pistache/include/pistache/ /usr/local/include && \
-  ldconfig && \
   cd /tmp && \
   rm -rf pistache \
 )
+
+RUN ldconfig /etc/ld.so.conf.d
 
 # git@github.com:mowijo/cpp-cassandra-pistache-development.git
